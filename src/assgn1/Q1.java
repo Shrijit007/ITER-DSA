@@ -6,7 +6,7 @@ public class Q1 {
             System.out.println("number less than 2");
         }
         int count =0;
-        while(n>2){
+        while(n>=2){
             n/=2;
             count++;
         }
