@@ -1,3 +1,4 @@
+package assgn1;
 public class Q1 {
     public static void main(String[] args) {
         int n = Integer.parseInt(args[0]);
