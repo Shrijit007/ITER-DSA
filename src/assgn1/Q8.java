@@ -11,19 +11,21 @@ public class Q8 {
         System.out.print("Enter elements of 2D-Array: ");
         int arr[][]=new int[m][n];
         for (int i = 0; i < m; i++) {
-            for (int j = 0; j < arr.length; j++) {
+            for (int j = 0; j < n; j++) {
                 arr[i][j]= sc.nextInt();
             }
         }
-        int count=0;
-        for (int i = 0; i < arr.length; i++) {
-            for (int j = 0; j < arr.length; j++) {
+        int count=0,sum=0;
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
                 if(count%3==0){
                     System.out.println();
             }
                 System.out.print(arr[i][j]+" ");
+                sum+=arr[i][j];
                count++;
             }
         }
+        System.out.println("The sum of elements of 2D Array is "+sum);
     }
 }

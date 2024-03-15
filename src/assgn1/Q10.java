@@ -12,7 +12,9 @@ public class Q10 {
                 arr[i][j] = sc.nextInt();
             }
         }
-        System.out.println("Sum of the elements at column 2 is "+sumColumn(arr,2));
+        for (int i = 0; i < 4; i++) {
+        System.out.println("Sum of the elements at column "+i+" is "+sumColumn(arr,i));
+        }
     }
     public static double sumColumn(double[][] m, int columnIndex){
         double sum=0;
