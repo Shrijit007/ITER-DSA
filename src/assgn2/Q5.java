@@ -1,5 +1,4 @@
 package assgn2;
-
 class per{
     String name;
     int age;
@@ -23,8 +22,8 @@ class employee extends per{
 public class Q5 {
     public static void main(String[] args) {
 
-    employee ob1=new employee("Sailesh",19,01,69);
-    employee ob2=new employee("Om",19,02,96);
+    employee ob1=new employee("Sailesh",19,1,69);
+    employee ob2=new employee("Om",19,2,96);
     ob1.empDisplay();
     ob2.empDisplay();
     }
