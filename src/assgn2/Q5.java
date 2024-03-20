@@ -7,14 +7,12 @@ class per{
         name=s;
         age=a;
     }
-    per(){}
 }
 class employee extends per{
     int eid;
     double salary;
     employee(String s,int a,int e,double  sa){
-        name=s;
-        age=a;
+        super(s,a);
         eid=e;
         salary=sa;
     }
@@ -23,7 +21,11 @@ class employee extends per{
     }
 }
 public class Q5 {
+    public static void main(String[] args) {
+
     employee ob1=new employee("Sailesh",19,01,69);
     employee ob2=new employee("Om",19,02,96);
-
+    ob1.empDisplay();
+    ob2.empDisplay();
+    }
 }
