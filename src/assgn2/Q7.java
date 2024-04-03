@@ -1,18 +1,18 @@
 package assgn2;
 interface DetailInfo{
     void display();
-    void count();
+    int count();
 }
-class pers{
+class pers implements DetailInfo{
     static int maxCount;
     String name;
     pers(String name){
         this.name=name;
     }
-    void display(){
+    public void display(){
         System.out.println("Name: "+name);
     }
-    int count(){
+    public int count(){
         return name.length();
     }
 }

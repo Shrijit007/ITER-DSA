@@ -29,7 +29,7 @@ public class Q3 {
             System.out.print("Enter product quantity: ");
             int qt=sc.nextInt();
             arr[i]= new product(id,prc,qt);
-        }
+        }   
         for (int i = 0; i < arr.length; i++) {
             product.tp+=((arr[i].price)*(arr[i].qty));
             arr[i].display();
