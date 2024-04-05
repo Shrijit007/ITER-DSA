@@ -2,8 +2,7 @@ package assgn2.Q8;
 
 import assgn2.Q8_Sports.Sports;
 
-
-
+import java.util.Scanner;
 class Student{
     String name;
     int roll;
@@ -20,7 +19,6 @@ class Student{
         System.out.println("Roll Number: " + roll);
     }
 }
-
 class Test extends Student {
     int mark1;
     int mark2;
