@@ -17,6 +17,7 @@ public class Student {
             if(mark>100){
                 throw new MarksOutOfBoundException("Marks couldn't exceed 100");
             }
+
         } catch (MarksOutOfBoundException e){
             System.out.println(e.getMessage());
         }
