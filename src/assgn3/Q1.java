@@ -13,7 +13,7 @@ public class Q1 {
             else
                 System.out.println("Your  lucky number is "+n);
         } catch (NumberFormatException e){
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
         }
     }
 }
