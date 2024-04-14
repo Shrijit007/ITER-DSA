@@ -14,9 +14,9 @@ public class Q2 {
                 arr[i] = sc.next();
             }
         } catch (InputMismatchException e) {
-            System.out.println(e);
+            System.err.println(e);
         } catch (NegativeArraySizeException e){
-            System.out.println(e);
+            System.err.println(e);
         }
     }
 }
