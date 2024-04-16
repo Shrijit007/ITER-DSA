@@ -5,7 +5,6 @@ class MarksOutOfBoundException extends Exception{
     MarksOutOfBoundException(String msg){
         super(msg);
     }
-
 }
 public class Student {
     public static void main(String[] args) {
