@@ -1,8 +1,5 @@
 package Practice;
-
-import java.awt.*;
 import java.util.Scanner;
-
 class FailException extends Exception{
     FailException(String msg){
         super(msg);
