@@ -15,8 +15,8 @@ public class Q2 {
             }
         } catch (InputMismatchException e) {
             System.err.println(e);
-        } catch (NegativeArraySizeException e){
-            System.err.println(e);
+        } catch (NegativeArraySizeException f){
+            System.err.println(f);
         }
     }
 }
