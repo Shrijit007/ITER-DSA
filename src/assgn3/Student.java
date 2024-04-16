@@ -14,7 +14,6 @@ public class Student {
         System.out.println("Enter marks: ");
         Double mark= sc.nextDouble();
         try{
-
             if(mark>100){
                 throw new MarksOutOfBoundException("Marks couldn't exceed 100");
             }
