@@ -31,8 +31,15 @@ public class Q2 {
             double p = sc.nextDouble();
             arr[i]=new Book(s,e,p);
         }
+        double max=Double.MIN_VALUE;
+        int index = 0;
         for (int i = 0; i < n; i++) {
-            arr[i].display();
+            if (arr[i].BPrice>max) {
+                max= arr[i].BPrice;
+                index=i;
+            }
         }
+        System.out.print("Book with max price:");
+        arr[index].display();
     }
 }
