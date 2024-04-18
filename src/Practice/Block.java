@@ -14,6 +14,5 @@ public class Block {
         }
         System.out.println("Mujhe drugs doooo💊");
         Block b2 = new Block();
-
     }
 }
