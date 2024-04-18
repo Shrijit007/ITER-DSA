@@ -10,5 +10,6 @@ public class ConstructorOverloading {
     ConstructorOverloading(int x,int y,int q){
         this.x=x;
         this.y=y;
+
     }
 }
