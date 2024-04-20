@@ -6,7 +6,7 @@ class a{
         System.out.println("hi");
     }
 }
-public class Q2 {
+public class OutputQ1 {
     public static void main(String[] args) {
         a ob=new a();
         System.out.println(ob.a);
