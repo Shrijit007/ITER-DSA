@@ -3,7 +3,7 @@ class a{
     final int a=abc();
     protected  int abc(){
         return 10;
-        System.out.println("hi");
+//        System.out.println("hi");
     }
 }
 public class OutputQ1 {
