@@ -1,5 +1,6 @@
 package Practice;
 import java.util.*;
+
 class node {
     int info;
     node next;
@@ -43,20 +44,17 @@ public class LinkedList {
             Scanner sc=new Scanner(System.in);
             System.out.println("Enter the choice");
             int choice=sc.nextInt();
- switch(choice)
- {
-case 0:
-System.exit(0);
-case 1:
-create();
-break;
-case 2:
-display();
-break;
-//call remaining user defined methods that we discussed in class
-
-default:
-System.out.println("Wrong choice");
+            switch(choice) {
+                case 0:
+                    System.exit(0);
+                case 1:
+                    create();
+                    break;
+                case 2:
+                    display();
+                    break;
+                default:
+                    System.out.println("Wrong choice");
              }
         }
     }
