@@ -1,7 +1,6 @@
 package Practice;
 class BinarySearch {
-    int binarySearch(int arr[], int x)      // Returns index of x if it is present in arr[].
-    {
+    int binarySearch(int arr[], int x){      // Returns index of x if it is present in arr[].
         int l = 0, n = arr.length;
         while (l <= n) {
             int m = (n + l) / 2;
