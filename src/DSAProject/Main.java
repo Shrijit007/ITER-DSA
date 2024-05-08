@@ -93,10 +93,10 @@ class golfClub{
         JoinDate=d;
     }
     public void display() {
-        String format = "| %-9s | %-10s | %-10s | %-8d | %-6s | %-10s | %-12s | %-6s | %-10s | %-10s |%n";
-        System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+------------+%n");
+        String format = "| %-9s | %-10s | %-10s | %-8d | %-6s | %-10s | %-12s | %-6s | %-10s | %-12s |%n";
+        System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+--------------+%n");
         System.out.printf(format, MemberID, LastName, FirstName, Handicap, Gender, Team, MemberType, Coach, Phone, JoinDate.dateDisplay());
-        System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+------------+%n");
+        System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+--------------+%n");
     }
 }
 
@@ -135,8 +135,8 @@ public class Main {
             member[i] = new golfClub(id, fname, lname, hc, g, t, mtype, c, ph, d);
         }
         //display
-        String format = "| %-9s | %-10s | %-10s | %-8s | %-6s | %-10s | %-12s | %-6s | %-10s | %-10s |%n";
-        System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+------------+%n");
+        String format = "| %-9s | %-10s | %-10s | %-8s | %-6s | %-10s | %-12s | %-6s | %-10s | %-12s |%n";
+        System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+--------------+%n");
         System.out.printf(format, "Member ID", "Last Name", "First Name", "Handicap", "Gender", "Team", "Member Type", "Coach", "Phone", "Join Date");
         for (int i = 0; i < n; i++) {
             member[i].display();
