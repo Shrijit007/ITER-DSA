@@ -83,6 +83,8 @@ public class LinkedList {
             System.out.println("0:Exit");
             System.out.println("1:Creation");
             System.out.println("2:Display");
+            System.out.println("3:Insertion");
+            System.out.println("4:Deletion");
             Scanner sc=new Scanner(System.in);
             System.out.println("Enter the choice");
             int choice=sc.nextInt();
