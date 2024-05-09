@@ -75,11 +75,11 @@ class Date{
 }
 
 class golfClub{
-    public int MemberID,Coach,Handicap;
-    public String LastName,FirstName,Team,MemberType;
-    public char Gender;
-    public long Phone;
-    public Date JoinDate;
+    private int MemberID,Coach,Handicap;
+    private String LastName,FirstName,Team,MemberType;
+    private char Gender;
+    private long Phone;
+    private Date JoinDate;
     golfClub(int ID,String fname, String lname,int hc,char g,String t,String memtype,int c,long ph,Date d){
         MemberID=ID;
         FirstName=fname;
@@ -98,9 +98,6 @@ class golfClub{
         System.out.printf(format, MemberID, LastName, FirstName, Handicap, Gender, Team, MemberType, Coach, Phone, JoinDate.dateDisplay());
         System.out.format("+-----------+------------+------------+----------+--------+------------+--------------+--------+------------+--------------+%n");
     }
-}
-
-public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter number of members: ");
@@ -127,7 +124,7 @@ public class Main {
             int c = sc.nextInt();
             System.out.print("Enter Phone Number: ");
             long ph = sc.nextLong();
-            System.out.print("Enter Join Date(DD/MM/YY): ");
+            System.out.print("Enter Join Date(DD/MM/YYYY): ");
             date = sc.nextInt();
             String month = sc.next();
             int year = sc.nextInt();
