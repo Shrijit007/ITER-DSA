@@ -140,18 +140,21 @@ class golfClub{
         }
         //date compare
         Date s2 = new Date(7,"april",2009);
+        System.out.println();
         System.out.println("Records where member's Join Date is earlier than 7 April 2009");
         for (int i = 0; i < n; i++) {
             if(member[i].JoinDate.dateCompare(member[i].JoinDate,s2))
                 member[i].display();
         }
         //handicap score less than 12
+        System.out.println();
         System.out.println("Records where member's Handicap score is less than 12");
         for (int i = 0; i < n; i++) {
             if(member[i].Handicap<12)
                 member[i].display();
         }
-        //female and belongs to team b
+        //female and belongs to teamB
+        System.out.println();
         System.out.println("Records where member's are female and belongs to team B");
         for (int i = 0; i < n; i++) {
             if(((member[i].Gender=='f')||(member[i].Gender=='F')) && (member[i].Team.equals("TeamB")))
