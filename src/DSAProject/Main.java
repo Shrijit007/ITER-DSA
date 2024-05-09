@@ -139,26 +139,42 @@ class golfClub{
             member[i].display();
         }
         //date compare
+        int count1=0;
         Date s2 = new Date(7,"april",2009);
         System.out.println();
         System.out.println("Records where member's Join Date is earlier than 7 April 2009");
         for (int i = 0; i < n; i++) {
-            if(member[i].JoinDate.dateCompare(member[i].JoinDate,s2))
+            if(member[i].JoinDate.dateCompare(member[i].JoinDate,s2)){
                 member[i].display();
+                count1++;
+            }
         }
+        if(count1==0)
+            System.out.println("No records found⛔");
+
         //handicap score less than 12
+        int count2=0;
         System.out.println();
         System.out.println("Records where member's Handicap score is less than 12");
         for (int i = 0; i < n; i++) {
-            if(member[i].Handicap<12)
+            if(member[i].Handicap<12){
                 member[i].display();
+                count2++;
+            }
         }
+        if(count2==0)
+            System.out.println("No records found⛔");
         //female and belongs to teamB
         System.out.println();
         System.out.println("Records where member's are female and belongs to team B");
+        int count3 = 0;
         for (int i = 0; i < n; i++) {
-            if(((member[i].Gender=='f')||(member[i].Gender=='F')) && (member[i].Team.equals("TeamB")))
+            if(((member[i].Gender=='f')||(member[i].Gender=='F')) && (member[i].Team.equals("TeamB"))){
                 member[i].display();
+                count3++;
+            }
         }
+        if(count3==0)
+            System.out.println("No records found⛔");
     }
 }
