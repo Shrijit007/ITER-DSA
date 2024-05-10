@@ -1,7 +1,4 @@
 package assgn3;
-
-import Practice.Interface;
-
 public class Q6 {
     public static <T> int count (T[] array,T item){
         int count = 0;
