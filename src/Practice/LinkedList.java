@@ -34,8 +34,8 @@ public class LinkedList {
             System.out.print(p.info+"-->");
             p=p.next;
         }
-
-    }    public static void insertNode(int position, int value) {
+    }
+    public static void insertNode(int position, int value) {
         node newNode = new node();
         newNode.info = value;
         if (position == 1) {
