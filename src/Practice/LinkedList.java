@@ -77,6 +77,19 @@ public class LinkedList {
         System.out.println("Node deleted successfully");
     }
 
+    public static int search(int value) {
+        node p = start;
+        int position = 1;
+        while (p != null) {
+            if (p.info == value) {
+                return position;
+            }
+            p = p.next;
+            position++;
+        }
+        return -1;
+    }
+
     public static void main(String[] args) {
         while(true) {
             System.out.println("\n*MENU");
@@ -85,6 +98,7 @@ public class LinkedList {
             System.out.println("2:Display");
             System.out.println("3:Insertion");
             System.out.println("4:Deletion");
+            System.out.println("5:Search");
             Scanner sc=new Scanner(System.in);
             System.out.println("Enter the choice");
             int choice=sc.nextInt();
@@ -107,6 +121,11 @@ public class LinkedList {
                     System.out.println("Enter position: ");
                     int pos1= sc.nextInt();
                     deleteNode(pos1);
+                    break;
+                case 5:
+                    System.out.print("Enter info to search: ");
+                    int info=sc.nextInt();
+                    search(info);
                     break;
                 default:
                     System.out.println("Wrong choice");
