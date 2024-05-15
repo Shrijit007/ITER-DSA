@@ -124,9 +124,13 @@ public class LinkedList {
                     break;
                 case 5:
                     System.out.print("Enter info to search: ");
-                    int info=sc.nextInt();
-                    search(info);
-                    break;
+                    int searchValue=sc.nextInt();
+                    int result = search(searchValue);
+                    if (result != -1) {
+                        System.out.println("Value found at position: " + result);
+                    } else {
+                        System.out.println("Value not found");
+                    }
                 default:
                     System.out.println("Wrong choice");
              }
