@@ -144,6 +144,30 @@ public class Linkedlist {
         System.out.println("Node added at the end successfully");
     }
 
+    public static void bubbleSort() {
+        if (start == null || start.next == null) {
+            return;
+        }
+        node current;
+        node tail = null;
+        boolean swapped;
+        do {
+            swapped = false;
+            current = start;
+            while (current.next != tail) {
+                if (current.info > current.next.info) {
+                    int temp = current.info;
+                    current.info = current.next.info;
+                    current.next.info = temp;
+                    swapped = true;
+                }
+                current = current.next;
+            }
+            tail = current;
+        } while (swapped);
+        System.out.println("List sorted successfully using Bubble Sort");
+    }
+
     public static void main(String[] args) {
 
         while (true) {
@@ -158,6 +182,7 @@ public class Linkedlist {
             System.out.println("7:Reverse using recursion");
             System.out.println("8:Add Node at the Beginning");
             System.out.println("9:Add Node at the End");
+            System.out.println("10:Bubble Sort");
             Scanner sc = new Scanner(System.in);
             System.out.println("Enter the choice");
             int choice = sc.nextInt();
@@ -208,8 +233,12 @@ public class Linkedlist {
                     int addAtEndValue = sc.nextInt();
                     addAtEnd(addAtEndValue);
                     break;
+                case 10:
+                    bubbleSort();
+                    break;
                 default:
                     System.out.println("Wrong choice");
+
             }
         }
     }
