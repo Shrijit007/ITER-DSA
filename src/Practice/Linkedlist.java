@@ -210,7 +210,6 @@ public class Linkedlist {
                     break;
                 default:
                     System.out.println("Wrong choice");
-
             }
         }
     }
