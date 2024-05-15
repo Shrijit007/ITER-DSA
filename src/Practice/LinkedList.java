@@ -79,13 +79,13 @@ public class LinkedList {
 
     public static int search(int value) {
         node p = start;
-        int position = 1;
+        int pos = 1;
         while (p != null) {
             if (p.info == value) {
-                return position;
+                return pos;
             }
             p = p.next;
-            position++;
+            pos++;
         }
         return -1;
     }
