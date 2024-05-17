@@ -1,7 +1,5 @@
 package assgn4;
 
-import Practice.node;
-
 import java.util.Scanner;
 
 class Node
