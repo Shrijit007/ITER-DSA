@@ -1,164 +1,276 @@
 package Practice;
-import java.util.*;
+import java.util.Scanner;
 
-class Node1 {
-    int info;
-    Node1 prev;
-    Node1 next;
+class DoublyNode {
+    protected int regd_no;
+    protected float mark;
+    protected DoublyNode next;
+    protected DoublyNode prev;
 }
 
 public class DoubleLinkedList {
-    static Node1 start = null;
+    static DoublyNode start = null;
 
     public static void create() {
         Scanner sc = new Scanner(System.in);
-        Node1 p = new Node1();
-        System.out.println("Enter info");
-        p.info = sc.nextInt();
-        p.prev = null;
-        p.next = null;
-        start = p;
-        Node1 q = p;
-        System.out.println("Do you want to create more number of nodes(y/n)");
-        char ch = sc.next().charAt(0);
-        while (ch != 'n') {
-            p = new Node1();
-            System.out.println("Enter info");
-            p.info = sc.nextInt();
-            p.prev = q;
+        DoublyNode p;
+        DoublyNode q = null;
+        int ch;
+        do {
+            p = new DoublyNode();
+            System.out.println("Enter registration number: ");
+            p.regd_no = sc.nextInt();
+            System.out.println("Enter marks:");
+            p.mark = sc.nextFloat();
             p.next = null;
-            q.next = p;
-            q = p;
-            System.out.println("Do you want to create more number of nodes(y/n)");
+            p.prev = q;
+            if (start == null) {
+                start = p;
+                q = p;
+            } else {
+                q.next = p;
+                q = p;
+            }
+            System.out.println("Do you want to create more nodes (y/n)?");
             ch = sc.next().charAt(0);
-        }
+        } while (ch == 'y' || ch == 'Y');
     }
 
     public static void display() {
-        Node1 p = start;
-        while (p != null) {
-            System.out.print(p.info + "-->");
-            p = p.next;
+        DoublyNode p = start;
+        if (start == null) {
+            System.out.println("Empty linked list");
+        } else {
+            System.out.println("*******Node details********* \nReg.no --- marks");
+            while (p != null) {
+                System.out.println(p.regd_no + "--------- " + p.mark);
+                p = p.next;
+            }
         }
     }
 
-    public static void insertNode(int position, int value) {
-        Node1 newNode = new Node1();
-        newNode.info = value;
-        if (position == 1) {
-            newNode.next = start;
-            newNode.prev = null;
-            if (start != null)
-                start.prev = newNode;
-            start = newNode;
+    public static void InsBeg() {
+        Scanner sc = new Scanner(System.in);
+        DoublyNode p = new DoublyNode();
+        System.out.println("Enter registration number: ");
+        p.regd_no = sc.nextInt();
+        System.out.println("Enter marks: ");
+        p.mark = sc.nextFloat();
+        p.next = start;
+        p.prev = null;
+        if (start != null) {
+            start.prev = p;
+        }
+        start = p;
+    }
+
+    public static void InsEnd() {
+        Scanner sc = new Scanner(System.in);
+        DoublyNode p = new DoublyNode();
+        System.out.println("Enter registration number: ");
+        p.regd_no = sc.nextInt();
+        System.out.println("Enter marks: ");
+        p.mark = sc.nextFloat();
+        p.next = null;
+        if (start == null) {
+            p.prev = null;
+            start = p;
         } else {
-            Node1 p = start;
-            for (int i = 1; i < position - 1 && p != null; i++) {
+            DoublyNode q = start;
+            while (q.next != null) {
+                q = q.next;
+            }
+            q.next = p;
+            p.prev = q;
+        }
+    }
+
+    public static void InsAny() {
+        Scanner sc = new Scanner(System.in);
+        DoublyNode p = new DoublyNode();
+        System.out.println("Enter the registration number of the new node: ");
+        p.regd_no = sc.nextInt();
+        System.out.println("Enter marks: ");
+        p.mark = sc.nextFloat();
+        System.out.println("Enter position of new node: ");
+        int pos = sc.nextInt();
+        if (pos == 0) {
+            System.out.println("Position does not exist in linked list.");
+        } else if (start == null || pos == 1) {
+            p.next = start;
+            p.prev = null;
+            if (start != null) {
+                start.prev = p;
+            }
+            start = p;
+            System.out.println("Node added at first position.");
+        } else {
+            DoublyNode q = start;
+            for (int i = 1; i < pos - 1 && q != null; i++) {
+                q = q.next;
+            }
+            if (q == null) {
+                System.out.println("Position not found, node added at last position.");
+                InsEnd();
+            } else {
+                p.next = q.next;
+                if (q.next != null) {
+                    q.next.prev = p;
+                }
+                q.next = p;
+                p.prev = q;
+                System.out.println("New node added at position " + pos);
+            }
+        }
+    }
+
+    public static void DelBeg() {
+        if (start == null) {
+            System.out.println("Empty linked list.");
+        } else {
+            DoublyNode p = start;
+            start = start.next;
+            if (start != null) {
+                start.prev = null;
+            }
+            System.out.println("Deleted node information\nReg.no --- marks");
+            System.out.println(p.regd_no + "--- ------ " + p.mark);
+        }
+    }
+
+    public static void DelEnd() {
+        if (start == null) {
+            System.out.println("Empty linked list.");
+        } else {
+            DoublyNode p = start;
+            while (p.next != null) {
+                p = p.next;
+            }
+            if (p.prev != null) {
+                p.prev.next = null;
+            } else {
+                start = null;
+            }
+            System.out.println("Deleted node information\nReg.no --- marks");
+            System.out.println(p.regd_no + "--- ------ " + p.mark);
+        }
+    }
+
+    public static void DelAny() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter position of deleted node: ");
+        int pos = sc.nextInt();
+        if (start == null) {
+            System.out.println("Empty linked list, delete not possible.");
+        } else if (pos == 1) {
+            DelBeg();
+        } else {
+            DoublyNode p = start;
+            for (int i = 1; i < pos && p != null; i++) {
                 p = p.next;
             }
             if (p == null) {
-                System.out.println("Invalid position");
-                return;
+                System.out.println("Position not found, delete not possible.");
+            } else {
+                if (p.next != null) {
+                    p.next.prev = p.prev;
+                }
+                if (p.prev != null) {
+                    p.prev.next = p.next;
+                }
+                System.out.println("Deleted node information\nReg.no --- marks");
+                System.out.println(p.regd_no + "--- ------ " + p.mark);
             }
-            newNode.next = p.next;
-            newNode.prev = p;
-            if (p.next != null)
-                p.next.prev = newNode;
-            p.next = newNode;
         }
-        System.out.println("Node inserted successfully");
     }
 
-    public static void deleteNode(int position) {
+    public static void search(int regNo) {
+        Scanner sc = new Scanner(System.in);
         if (start == null) {
-            System.out.println("List is empty");
-            return;
-        }
-        if (position == 1) {
-            start = start.next;
-            if (start != null)
-                start.prev = null;
+            System.out.println("Empty linked list.");
         } else {
-            Node1 p = start;
-            for (int i = 1; i < position - 1 && p != null; i++) {
+            DoublyNode p = start;
+            while (p != null) {
+                if (p.regd_no == regNo) {
+                    System.out.println("Registration found, enter the updated marks:");
+                    p.mark = sc.nextFloat();
+                    System.out.println("Marks updated.");
+                    return;
+                }
                 p = p.next;
             }
-            if (p == null || p.next == null) {
-                System.out.println("Invalid position");
-                return;
-            }
-            p.next = p.next.next;
-            if (p.next != null)
-                p.next.prev = p;
+            System.out.println("Registration number not found.");
         }
-        System.out.println("Node deleted successfully");
     }
 
-    public static int search(int value) {
-        Node1 p = start;
-        int position = 1;
-        while (p != null) {
-            if (p.info == value) {
-                return position;
-            }
-            p = p.next;
-            position++;
+    public static void count() {
+        int c = 0;
+        DoublyNode q = start;
+        while (q != null) {
+            c++;
+            q = q.next;
         }
-        return -1;
+        System.out.println("Number of nodes present in linked list is " + c);
     }
 
     public static void reverse() {
-        Node1 temp = null;
-        Node1 current = start;
-        while (current != null) {
-            temp = current.prev;
-            current.prev = current.next;
-            current.next = temp;
-            current = current.prev;
+        DoublyNode q = start;
+        DoublyNode temp = null;
+        while (q != null) {
+            temp = q.prev;
+            q.prev = q.next;
+            q.next = temp;
+            q = q.prev;
         }
         if (temp != null) {
             start = temp.prev;
         }
-        System.out.println("List reversed successfully");
+        System.out.println("Linked list reversed.");
     }
 
-    public static void bubbleSort() {
-        if (start == null || start.next == null) {
+    public static void sort() {
+        if (start == null) {
+            System.out.println("Empty linked list.");
             return;
         }
-        boolean swapped;
-        Node1 current;
-        Node1 tail = null;
-        do {
-            swapped = false;
-            current = start;
-            while (current.next != tail) {
-                if (current.info > current.next.info) {
-                    int temp = current.info;
-                    current.info = current.next.info;
-                    current.next.info = temp;
-                    swapped = true;
+        DoublyNode m = start;
+        while (m.next != null) {
+            DoublyNode q = start;
+            while (q.next != null) {
+                if (q.mark > q.next.mark) {
+                    // Swap registration number and marks
+                    int reg = q.regd_no;
+                    float mark = q.mark;
+                    q.regd_no = q.next.regd_no;
+                    q.mark = q.next.mark;
+                    q.next.regd_no = reg;
+                    q.next.mark = mark;
                 }
-                current = current.next;
+                q = q.next;
             }
-            tail = current;
-        } while (swapped);
-        System.out.println("List sorted successfully using Bubble Sort");
+            m = m.next;
+        }
+        System.out.println("Linked list sorted based on marks.");
     }
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         while (true) {
-            System.out.println("\n****MENU*****");
-            System.out.println("0:Exit");
-            System.out.println("1:Creation");
-            System.out.println("2:Display");
-            System.out.println("3:Insertion");
-            System.out.println("4:Deletion");
-            System.out.println("5:Search");
-            System.out.println("6:Reverse");
-            System.out.println("7:Bubble Sort");
-            Scanner sc = new Scanner(System.in);
-            System.out.println("Enter the choice");
+            System.out.println("\n****MENU****");
+            System.out.println("0: Exit");
+            System.out.println("1: Creation");
+            System.out.println("2: Display");
+            System.out.println("3: Insert new node at the beginning");
+            System.out.println("4: Insert new node at the end");
+            System.out.println("5: Insert new node at any position");
+            System.out.println("6: Delete a node from first");
+            System.out.println("7: Delete a node from last");
+            System.out.println("8: Delete a node from any position");
+            System.out.println("9: Update marks based on registration number");
+            System.out.println("10: Count of linked list");
+            System.out.println("11: Sort the linked list based on marks");
+            System.out.println("12: Reverse the linked list");
+            System.out.println("Enter your choice:");
             int choice = sc.nextInt();
             switch (choice) {
                 case 0:
@@ -170,35 +282,39 @@ public class DoubleLinkedList {
                     display();
                     break;
                 case 3:
-                    System.out.println("Enter the position to insert:");
-                    int insertPosition = sc.nextInt();
-                    System.out.println("Enter the value to insert:");
-                    int insertValue = sc.nextInt();
-                    insertNode(insertPosition, insertValue);
+                    InsBeg();
                     break;
                 case 4:
-                    System.out.println("Enter the position to delete:");
-                    int deletePosition = sc.nextInt();
-                    deleteNode(deletePosition);
+                    InsEnd();
                     break;
                 case 5:
-                    System.out.println("Enter the value to search:");
-                    int searchValue = sc.nextInt();
-                    int result = search(searchValue);
-                    if (result != -1) {
-                        System.out.println("Value found at position: " + result);
-                    } else {
-                        System.out.println("Value not found");
-                    }
+                    InsAny();
                     break;
                 case 6:
-                    reverse();
+                    DelBeg();
                     break;
                 case 7:
-                    bubbleSort();
+                    DelEnd();
+                    break;
+                case 8:
+                    DelAny();
+                    break;
+                case 9:
+                    System.out.println("Enter the registration number of the node to update marks:");
+                    int regNo = sc.nextInt();
+                    search(regNo);
+                    break;
+                case 10:
+                    count();
+                    break;
+                case 11:
+                    sort();
+                    break;
+                case 12:
+                    reverse();
                     break;
                 default:
-                    System.out.println("Wrong choice");
+                    System.out.println("Invalid choice.");
             }
         }
     }
