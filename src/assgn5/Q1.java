@@ -22,14 +22,9 @@ public class Q1 {
         n.prev = null;
         start = n;
         end = n;
-
-        while(true) {
-            System.out.println("Do you want to create more nodes (y/n): ");
-            char ch = sc.next().charAt(0);
-
-            if(ch != 'y' && ch != 'Y')
-                break;
-
+        System.out.println("Do you want to create more nodes (y/n): ");
+        char ch = sc.next().charAt(0);
+        while(ch != 'n' ) {
             n = new Node();
             System.out.println("Enter student information: ");
             n.regdNo = sc.nextInt();
@@ -216,7 +211,6 @@ public class Q1 {
         }
         return count;
     }
-
     public static void main(String args[]) {
         Scanner sc = new Scanner(System.in);
         int choice;
@@ -235,43 +229,24 @@ public class Q1 {
             System.out.println(" 9. Display list");
             System.out.println("10. Exit");
             System.out.print("\nEnter choice: ");
-
             choice = sc.nextInt();
-
-            switch(choice) {
-                case 1:
-                    create();
-                    break;
-                case 2:
-                    insBeg();
-                    break;
-                case 3:
-                    insEnd();
-                    break;
-                case 4:
-                    insAny();
-                    break;
-                case 5:
-                    delBeg();
-                    break;
-                case 6:
-                    delEnd();
-                    break;
-                case 7:
-                    delAny();
-                    break;
-                case 8:
-                    search();
-                    break;
-                case 9:
-                    display();
-                    break;
-                case 10:
+            switch (choice) {
+                case 1 -> create();
+                case 2 -> insBeg();
+                case 3 -> insEnd();
+                case 4 -> insAny();
+                case 5 -> delBeg();
+                case 6 -> delEnd();
+                case 7 -> delAny();
+                case 8 -> search();
+                case 9 -> display();
+                case 10 -> {
                     System.out.println("Terminating program");
                     System.exit(0);
-                default:
-                    System.out.println("Invalid choice!");
+                }
+                default -> System.out.println("Invalid choice!");
             }
+
         }
     }
 }
