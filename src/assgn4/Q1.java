@@ -236,48 +236,25 @@ public class Q1 {
             System.out.print("Enter your choice: ");
             int n = sc.nextInt();
             switch (n) {
-                case 0:
-                    System.exit(0);
-                case 1:
-                    start = create(start);
-                    break;
-                case 2:
-                    start = InsBeg(start);
-                    break;
-                case 3:
-                    start = InsAny(start);
-                    break;
-                case 4:
-                    start = InsEnd(start);
-                    break;
-                case 5:
-                    start = DelBeg(start);
-                    break;
-                case 6:
-                    start = DelAny(start);
-                    break;
-                case 7:
-                    start = DelEnd(start);
-                    break;
-                case 8:
-                    search(start);
-                    break;
-                case 9:
-                    int count = count(start);
-                    System.out.println("Number of nodes: " + count);
-                    break;
-                case 10:
-                    start = reverse(start);
-                    break;
-                case 11:
-                    sort(start);
-                    break;
-                case 12:
-                    display(start);
-                    break;
-                default:
-                    System.err.println("Invalid choice");
+                    case 0 -> System.exit(0);
+                    case 1 -> start = create(start);
+                    case 2 -> start = InsBeg(start);
+                    case 3 -> start = InsAny(start);
+                    case 4 -> start = InsEnd(start);
+                    case 5 -> start = DelBeg(start);
+                    case 6 -> start = DelAny(start);
+                    case 7 -> start = DelEnd(start);
+                    case 8 -> search(start);
+                    case 9 -> {
+                        int count = count(start);
+                        System.out.println("Number of nodes: " + count);
+                    }
+                    case 10 -> start = reverse(start);
+                    case 11 -> sort(start);
+                    case 12 -> display(start);
+                    default -> System.err.println("Invalid choice");
+                }
+
             }
-        }
     }
 }
