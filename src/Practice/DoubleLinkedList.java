@@ -9,31 +9,29 @@ class DoublyNode {
 }
 
 public class DoubleLinkedList {
-    static DoublyNode start = null;
-
+    static DoublyNode start = null,end = null;
+    static Scanner sc = new Scanner(System.in);
     public static void create() {
-        Scanner sc = new Scanner(System.in);
-        DoublyNode p;
-        DoublyNode q = null;
-        int ch;
-        do {
-            p = new DoublyNode();
-            System.out.println("Enter registration number: ");
-            p.regd_no = sc.nextInt();
-            System.out.println("Enter marks:");
-            p.mark = sc.nextFloat();
-            p.next = null;
-            p.prev = q;
-            if (start == null) {
-                start = p;
-                q = p;
-            } else {
-                q.next = p;
-                q = p;
-            }
-            System.out.println("Do you want to create more nodes (y/n)?");
-            ch = sc.next().charAt(0);
-        } while (ch == 'y' || ch == 'Y');
+        DoublyNode n = new DoublyNode();
+        System.out.println("Enter student information: ");
+        n.regd_no = sc.nextInt();
+        n.mark = sc.nextFloat();
+        n.next = null;
+        n.prev = null;
+        start = n;
+        end = n;
+        System.out.println("Do you want to create more nodes (y/n): ");
+        char ch = sc.next().charAt(0);
+        while(ch != 'n' ) {
+            n = new DoublyNode();
+            System.out.println("Enter student information: ");
+            n.regd_no = sc.nextInt();
+            n.mark = sc.nextFloat();
+            n.next = null;
+            n.prev = end;
+            end.next = n;
+            end = n;
+        }
     }
 
     public static void display() {
