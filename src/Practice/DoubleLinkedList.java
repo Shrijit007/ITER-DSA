@@ -22,7 +22,7 @@ public class DoubleLinkedList {
         end = n;
         System.out.println("Do you want to create more nodes (y/n): ");
         char ch = sc.next().charAt(0);
-        while(ch != 'n' ) {
+        while (ch != 'n') {
             n = new DoublyNode();
             System.out.println("Enter student information: ");
             n.regd_no = sc.nextInt();
@@ -31,6 +31,8 @@ public class DoubleLinkedList {
             n.prev = end;
             end.next = n;
             end = n;
+            System.out.println("Do you want to create more nodes (y/n): "); // Added this line
+            ch = sc.next().charAt(0); // Updated ch
         }
     }
 
