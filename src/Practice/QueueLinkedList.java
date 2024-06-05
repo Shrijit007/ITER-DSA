@@ -64,8 +64,7 @@ public class QueueLinkedList {
         NODE temp = front;
         System.out.println("Queue nodes information:\nReg.no --- marks");
         while (temp != null) {
-            System.out.println(temp.regd_no + "--------- " +
-                    temp.mark);
+            System.out.println(temp.regd_no + "--------- " + temp.mark);
             temp = temp.next;
         }
     }
