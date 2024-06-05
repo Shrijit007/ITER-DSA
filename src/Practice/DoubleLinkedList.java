@@ -12,25 +12,25 @@ public class DoubleLinkedList {
     static DoublyNode start = null,end = null;
     static Scanner sc = new Scanner(System.in);
     public static void create() {
-        DoublyNode n = new DoublyNode();
+        DoublyNode p = new DoublyNode();
         System.out.println("Enter student information: ");
-        n.regd_no = sc.nextInt();
-        n.mark = sc.nextFloat();
-        n.next = null;
-        n.prev = null;
-        start = n;
-        end = n;
+        p.regd_no = sc.nextInt();
+        p.mark = sc.nextFloat();
+        p.next = null;
+        p.prev = null;
+        start = p;
+        end = p;
         System.out.println("Do you want to create more nodes (y/n): ");
         char ch = sc.next().charAt(0);
         while (ch != 'n') {
-            n = new DoublyNode();
+            p = new DoublyNode();
             System.out.println("Enter student information: ");
-            n.regd_no = sc.nextInt();
-            n.mark = sc.nextFloat();
-            n.next = null;
-            n.prev = end;
-            end.next = n;
-            end = n;
+            p.regd_no = sc.nextInt();
+            p.mark = sc.nextFloat();
+            p.next = null;
+            p.prev = end;
+            end.next = p;
+            end = p;
             System.out.println("Do you want to create more nodes (y/n): "); // Added this line
             ch = sc.next().charAt(0); // Updated ch
         }
