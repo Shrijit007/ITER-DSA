@@ -1,24 +1,23 @@
 package Practice;
 
-class Node {
+class StackNode {
     int data;
-    Node next;
-
-    public Node(int data) {
+    StackNode next;
+    public StackNode(int data) {
         this.data = data;
         this.next = null;
     }
 }
 
-    public class StackLinkedList {
-    private Node top;
+public class StackLinkedList {
+    private StackNode top;
 
     public StackLinkedList() {
         this.top = null;
     }
 
     public void push(int value) {
-        Node newNode = new Node(value);
+        StackNode newNode = new StackNode(value);
         newNode.next = top;
         top = newNode;
         System.out.println("Pushed " + value + " into the stack");
@@ -52,7 +51,7 @@ class Node {
             return;
         }
         System.out.print("Stack: ");
-        Node current = top;
+        StackNode current = top;
         while (current != null) {
             System.out.print(current.data + " ");
             current = current.next;
