@@ -3,22 +3,19 @@ import java.util.Scanner;
 class Node {
     int info;
     Node next;
-
-    Node(int info) {
-        this.info = info;
-        this.next = null;
-    }
 }
 public class PartII {
-    public static Node insert(Node rear, Node front, int x) {
-        Node newNode = new Node(x);
+    static Scanner sc =new Scanner(System.in);
+    public static Node insert(Node rear, Node front) {
+        Node newNode = new Node();
+        System.out.println("Enter element to insert:");
+        newNode.info=sc.nextInt();
         if (rear == null) {
             front = rear = newNode;
         } else {
             rear.next = newNode;
             rear = newNode;
         }
-        System.out.println("Inserted " + x);
         return rear;
     }
     public static Node delete(Node rear, Node front) {
@@ -65,12 +62,10 @@ public class PartII {
                     System.exit(0);
                     break;
                 case 1:
-                    System.out.println("Enter element to insert:");
-                    int x = sc.nextInt();
                     if (front == null) {
-                        rear = front = insert(rear, front, x);
+                        rear = front = insert(rear, front);
                     } else {
-                        rear = insert(rear, front, x);
+                        rear = insert(rear, front);
                     }
                     break;
                 case 2:
