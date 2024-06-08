@@ -18,4 +18,3 @@ public class Q3 {
         System.out.println("Binary equivalent of " + number + " is: " + binaryRepresentation);
     }
 }
-
