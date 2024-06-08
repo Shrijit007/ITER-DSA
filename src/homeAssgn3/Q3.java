@@ -1,8 +1,7 @@
+// Recursive method to find binary equivalent of a positive decimal integer
 package homeAssgn3;
 
 public class Q3 {
-
-    // Recursive method to find binary equivalent of a positive decimal integer
     public static String decimalToBinary(int n) {
         if (n == 0) {
             return "0";
