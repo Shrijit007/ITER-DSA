@@ -10,7 +10,6 @@ public class Q5 {
         return reverse(s.substring(1)) + s.charAt(0);
     }
 
-    // Main method to test the reverse method
     public static void main(String[] args) {
         String s = "pots&pans";
         String reversed = reverse(s);
