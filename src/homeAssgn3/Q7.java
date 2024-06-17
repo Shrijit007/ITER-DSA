@@ -1,28 +1,39 @@
 package homeAssgn3;
 
 public class Q7 {
-    int binarySearch(int arr[], int k){
-        int l = 0, n = arr.length;
-        while (l <= n) {
-            int m = (n + l) / 2;
-            if (arr[m] == k)
-                return m;
-            if (arr[m] < k)
-                l = m + 1;
-            else
-                n = m - 1;
+        public static void rearrangeArray(int[] arr, int k) {
+            bubbleSortRearrange(arr, k);
         }
-        return -1;
+
+        private static void bubbleSortRearrange(int[] arr, int k) {
+            int n = arr.length;
+            for (int i = 0; i < n - 1; i++) {
+                for (int j = 0; j < n - i - 1; j++) {
+                    if (arr[j] > k && arr[j + 1] <= k) {
+                        int temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+        }
+
+        public static void main(String[] args) {
+            int[] arr = {9, 3, 5, 8, 2, 7, 1, 6, 4};
+            int k = 5;
+
+            System.out.println("Original array:");
+            for (int num : arr) {
+                System.out.print(num + " ");
+            }
+            System.out.println();
+
+            rearrangeArray(arr, k);
+
+            System.out.println("Rearranged array:");
+            for (int num : arr) {
+                System.out.print(num + " ");
+            }
+        }
     }
 
-    public static void main(String args[]) {
-        Q7 ob = new Q7();
-        int arr[] = { 2, 3, 4, 10, 40 };
-        int k = 10;
-        int result = ob.binarySearch(arr, k);
-        if (result == -1)
-            System.out.println("Element is not present in array");
-        else
-            System.out.println("Element is present at index " + result);
-    }
-}
