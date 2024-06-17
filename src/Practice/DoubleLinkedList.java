@@ -31,8 +31,8 @@ public class DoubleLinkedList {
             p.prev = end;
             end.next = p;
             end = p;
-            System.out.println("Do you want to create more nodes (y/n): "); // Added this line
-            ch = sc.next().charAt(0); // Updated ch
+            System.out.println("Do you want to create more nodes (y/n): ");
+            ch = sc.next().charAt(0);
         }
     }
 
