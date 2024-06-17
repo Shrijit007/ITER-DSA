@@ -2,9 +2,8 @@ package assgn3;
 public class Q6 {
     public static <T> int count (T[] array,T item){
         int count = 0;
-        for (int j = 0; j < array.length; j++) {
+        for (int j = 0; j < array.length; j++)
             if(array[j].equals(item)) count++;
-        }
         return count;
     }
 
@@ -12,8 +11,8 @@ public class Q6 {
         Integer intArray[]={1,4,2,5,3,2,2};
         String stringArray[]  ={"hello","world"};
         Character charArray[]={'e','r','q','r'};
-        System.out.println("2 occurs: "+count(intArray,2));
-        System.out.println("Hello occurs: "+count(stringArray,"hello"));
-        System.out.println("r occurs: "+count(charArray,'r'));
+        System.out.println("2 occurs: "+count(intArray,2)+"times");
+        System.out.println("Hello occurs: "+count(stringArray,"hello")+"times");
+        System.out.println("r occurs: "+count(charArray,'r')+"times");
     }
 }
