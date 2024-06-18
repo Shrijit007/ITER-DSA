@@ -1,3 +1,5 @@
+//write a recursive method to find fibonacci sum
+
 package assgn3;
 
 public class Q10 {
