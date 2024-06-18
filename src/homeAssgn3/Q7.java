@@ -19,7 +19,7 @@ public class Q7 {
         }
 
         public static void main(String[] args) {
-            int[] arr = {9, 3, 5, 8, 2, 7, 1, 6, 4};
+            int[] arr = { 15, 3, 2, 10, 6, 5, 12 };
             int k = 5;
 
             System.out.println("Original array:");
