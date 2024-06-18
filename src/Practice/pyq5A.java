@@ -20,15 +20,20 @@ public class pyq5A {
         arr[end] = temp;
         return reverseArray(arr, start + 1, end - 1);
     }
-    public void PrintArray(String[]arr){
+    public static void PrintArray(String[]arr){
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
     }
+    public static void reverseprint(String s[],int n){
+        if(n==0) return;
+        System.out.println(s[n-1]);
+        reverseprint(s,n-1);
+    }
     public static void main(String[] args) {
         pyq5A p1 = new pyq5A();
         String[]s=p1.InputOnline(4);
-        p1.PrintArray(s);
+        reverseprint(s,4);
         System.out.println("Original Array:");
         p1.reverseArray(s, 0, s.length - 1);
         System.out.println("Reversed Array:");
