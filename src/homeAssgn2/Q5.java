@@ -1,7 +1,5 @@
 package homeAssgn2;
 
-import java.awt.font.TextAttribute;
-
 class PointType{
     double x,y;
     PointType(double x,double y){
