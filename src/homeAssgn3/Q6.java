@@ -14,6 +14,7 @@ public class Q6 {
         String palindrome1 = "racecar";
         String palindrome2 = "gohangasalamiimalasagnahog";
         String nonPalindrome = "hello";
+
         System.out.println(palindrome1 + " is a palindrome: " + isPalindrome(palindrome1));
         System.out.println(palindrome2 + " is a palindrome: " + isPalindrome(palindrome2));
         System.out.println(nonPalindrome + " is a palindrome: " + isPalindrome(nonPalindrome));
